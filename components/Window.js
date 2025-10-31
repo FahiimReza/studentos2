@@ -25,7 +25,25 @@ function Window({ window, isActive, onClose, onFocus }) {
       };
     }, [isDragging, dragStart]);
 
-    const ComponentMap = { NotesApp, CalendarApp, StudyPlannerApp, Settings };
+    const ComponentMap = {
+      NotesApp,
+      CalendarApp,
+      StudyPlannerApp,
+      Settings,
+      CodeStudioApp,
+      AssignmentsApp,
+      ProgressTrackerApp,
+      AIAssistantApp,
+      MathToolsApp,
+      FileHubApp,
+      ResearchPortalApp,
+      PracticeArenaApp,
+      CareerRoadmapApp,
+      UtilitiesApp,
+      UniversityPortalApp,
+      StudyGroupApp,
+      FocusModeApp
+    };
     const Component = ComponentMap[window.component];
 
     return (
