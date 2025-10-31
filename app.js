@@ -30,7 +30,7 @@ function App() {
     const [activeWindow, setActiveWindow] = React.useState(null);
     const [theme, setTheme] = React.useState('light');
     const [currentWallpaper, setCurrentWallpaper] = React.useState(WALLPAPERS[0]);
-    const [showWidgets, setShowWidgets] = React.useState(false);
+    const [showWidgets, setShowWidgets] = React.useState(true);
 
     React.useEffect(() => {
       const isAuth = localStorage.getItem('studentos-auth');
@@ -61,9 +61,10 @@ function App() {
           setActiveWindow(app.id);
           return prev;
         }
+        // Adjust x position to account for the left widget panel (350px wide)
         const newWindow = {
           ...app,
-          position: { x: 100 + prev.length * 40, y: 100 + prev.length * 40 },
+          position: { x: 380 + prev.length * 40, y: 100 + prev.length * 40 },
           size: { width: 800, height: 600 }
         };
         setActiveWindow(app.id);
@@ -109,7 +110,22 @@ function App() {
           />
         ))}
         <Dock onOpenWindow={openWindow} openWindows={openWindows} />
-        <WidgetPanel isOpen={showWidgets} />
+        {showWidgets && (
+          <>
+            <DraggableWidget id="clock" defaultPosition={{ x: 50, y: 100 }}>
+              <ClockWidget />
+            </DraggableWidget>
+            <DraggableWidget id="schedule" defaultPosition={{ x: 50, y: 250 }}>
+              <ScheduleWidget />
+            </DraggableWidget>
+            <DraggableWidget id="todo" defaultPosition={{ x: 50, y: 450 }}>
+              <TodoWidget />
+            </DraggableWidget>
+            <DraggableWidget id="progress" defaultPosition={{ x: 50, y: 600 }}>
+              <ProgressWidget />
+            </DraggableWidget>
+          </>
+        )}
       </div>
     );
   } catch (error) {

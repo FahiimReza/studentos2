@@ -95,6 +95,16 @@
             to { transform: translateX(100%); opacity: 0; }
         }
         
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOutLeft {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(-100%); opacity: 0; }
+        }
+        
         @keyframes scaleIn {
             from { transform: scale(0.5); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
@@ -113,6 +123,7 @@
     <script type="text/babel" src="components/Dock.js"></script>
     <script type="text/babel" src="components/Window.js"></script>
     <script type="text/babel" src="components/WidgetPanel.js"></script>
+    <script type="text/babel" src="components/DraggableWidget.js"></script>
     <script type="text/babel" src="widgets/ClockWidget.js"></script>
     <script type="text/babel" src="widgets/ScheduleWidget.js"></script>
     <script type="text/babel" src="widgets/TodoWidget.js"></script>

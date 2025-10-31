@@ -8,11 +8,11 @@ function ClockWidget() {
     }, []);
 
     return (
-      <div className="glass-effect rounded-2xl p-6 text-center" data-file="widgets/ClockWidget.js">
-        <div className="text-4xl font-light mb-2">
+      <div className="backdrop-blur-xl bg-white/20 dark:bg-black/30 rounded-3xl p-6 text-center shadow-2xl border border-white/30 dark:border-white/20 transition-all hover:scale-105 hover:bg-white/30 dark:hover:bg-black/40" data-file="widgets/ClockWidget.js">
+        <div className="text-4xl font-light mb-2 text-white drop-shadow-lg">
           {time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
         </div>
-        <div className="text-sm opacity-70">
+        <div className="text-sm opacity-80 text-white drop-shadow">
           {time.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
         </div>
       </div>
