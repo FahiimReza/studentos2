@@ -1,0 +1,23 @@
+{
+  "name": "studentos",
+  "version": "1.0.0",
+  "description": "A modern desktop interface for university students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "student",
+    "university",
+    "desktop",
+    "courses",
+    "grades",
+    "AI assistant"
+  ],
+  "author": "",
+  "license": "ISC"
+}
