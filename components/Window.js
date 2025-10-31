@@ -42,7 +42,8 @@ function Window({ window, isActive, onClose, onFocus }) {
       UtilitiesApp,
       UniversityPortalApp,
       StudyGroupApp,
-      FocusModeApp
+      FocusModeApp,
+      BrowserApp
     };
     const Component = ComponentMap[window.component];
 

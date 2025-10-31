@@ -105,6 +105,13 @@ const DOCK_CONFIG = [
     color: '#FF2D55'
   },
   {
+    id: 'browser',
+    title: 'Browser',
+    icon: 'globe',
+    component: 'BrowserApp',
+    color: '#006CFF'
+  },
+  {
     id: 'calendar',
     title: 'Calendar',
     icon: 'calendar',
